@@ -14,25 +14,45 @@
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
-\usepackage[left=2.00cm, right=2.50cm, top=2.50cm, bottom=2.00cm]{geometry}
+\usepackage{xcolor}
+\usepackage[left=2.00cm, right=2.50cm, top=5cm, bottom=2.00cm]{geometry}
 \usepackage{fancyhdr}
 \fancyhead[RO,LE]{\thepage}
 \fancyhead[LO]{\emph{\uppercase{\leftmark}}}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{1.0pt}
+\renewcommand{\contentsname}{Índice}
 \pagestyle{fancy}
-\date{}
+\author{Ing. Lautaro Juan Bautista Vera}
+\date{7 de noviembre de 2021}
 \title{IEEE-830}
 \hypersetup{
+ colorlinks = true,
+ linkcolor = {black},
+ linkbordercolor = {white},
+ urlcolor = {blue},
  pdfauthor={},
- pdftitle={IEEE-830},
+ pdftitle={ERS-IEEE-830},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 26.2 (Org mode 9.1.9)}, 
- pdflang={English}}
+ pdflang={Spanish}}
 \begin{document}
+	\begin{titlepage}
+		\centering
+		{\scshape\Huge Bootloader Multi-Etapa \par}
+		\vspace{5cm}
+		{\bfseries\LARGE Especificación de Requerimientos de Software \par}
+		\vspace{1cm}
+		{\scshape\Large IEEE Std. 830-1998 \par}
+		\vfill
+		{\Large Ing. Lautaro Juan Bautista Vera \\ (\href{mailto:lautarovera93@gmail.com}{lautarovera93@gmail.com})\par}
+		\vfill
+		{7 de Noviembre 2021 \par}
+	\end{titlepage}
 
-\maketitle
+\newgeometry{left=2.00cm, right=2.50cm, top=2.50cm, bottom=2.00cm}
+
 \tableofcontents
 
 \newpage
