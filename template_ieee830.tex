@@ -1,6 +1,7 @@
 % Created 2020-04-24 vie 23:03
 % Intended LaTeX compiler: pdflatex
-\documentclass[12pt,a4paper, twosite]{article}
+\documentclass[12pt,a4paper]{article}
+%------------------------------ PACKAGES -----------------------------%
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -14,18 +15,24 @@
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage[left=2.00cm, right=2.50cm, top=5cm, bottom=2.00cm]{geometry}
 \usepackage{fancyhdr}
-\fancyhead[RO,LE]{\thepage}
+\usepackage{tabularx}
+
+%------------------------------ DEFINES ------------------------------%
+\def\Author{Lautaro Vera}
+\def\Email{lautarovera93@gmail.com}
+\def\Title{Bootloader Multi-Etapa}
+
+%------------------------------ SETTINGS -----------------------------%
+\fancyhead[RO,L]{\thepage}
 \fancyhead[LO]{\emph{\uppercase{\leftmark}}}
 \fancyfoot{}
+\setlength\headheight{15pt} 
 \renewcommand{\headrulewidth}{1.0pt}
 \renewcommand{\contentsname}{Índice}
 \pagestyle{fancy}
-\author{Ing. Lautaro Juan Bautista Vera}
-\date{7 de noviembre de 2021}
-\title{IEEE-830}
 \hypersetup{
  colorlinks = true,
  linkcolor = {black},
@@ -37,28 +44,54 @@
  pdfsubject={},
  pdfcreator={Emacs 26.2 (Org mode 9.1.9)}, 
  pdflang={Spanish}}
+ 
+%----------------------------- DOCUMENT -----------------------------%
 \begin{document}
 	\begin{titlepage}
 		\centering
-		{\scshape\Huge Bootloader Multi-Etapa \par}
+		{\scshape\Huge \Title \par}
 		\vspace{5cm}
 		{\bfseries\LARGE Especificación de Requerimientos de Software \par}
 		\vspace{1cm}
 		{\scshape\Large IEEE Std. 830-1998 \par}
 		\vfill
-		{\Large Ing. Lautaro Juan Bautista Vera \\ (\href{mailto:lautarovera93@gmail.com}{lautarovera93@gmail.com})\par}
+		{\Large \Author \\ (\href{mailto:\Email}{\Email})\par}
 		\vfill
 		{7 de Noviembre 2021 \par}
 	\end{titlepage}
 
 \newgeometry{left=2.00cm, right=2.50cm, top=2.50cm, bottom=2.00cm}
 
+\section*{Registro de cambios}
+\label{sec:registro}
+
+
+\begin{table}[ht]
+\label{tab:registro}
+	\centering
+	\begin{tabularx}{\linewidth}{@{}|c|X|c|c|@{}}
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	Versión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Descripción} & Autor       & Fecha      \\ \hline
+	A      & Versión original                                          & \Author & 07/10/2021 \\ \hline
+	%1      & Se completa hasta el punto 5 inclusive                 & 04/11/2021 \\ \hline
+	%2      & Se completa hasta el punto 7 inclusive
+	%		  Se puede agregar algo más \newline
+	%		  En distintas líneas \newline
+	%		  Así                                                    & dd/mm/aaaa \\ \hline
+	%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
+	%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
+	\end{tabularx}
+\end{table}
+
+\pagebreak
+
 \tableofcontents
 
 \newpage
 
 \section{Introducción}
-\label{sec:org60390fa}
+\label{sec:introduction}
 
 En esta sección se proporcionará una introducción a todo el
 documento de Especificación de Requisitos Software(ERS). Consta de
@@ -67,14 +100,14 @@ referencias y visión general del documento.
 
 
 \subsection{Propósito}
-\label{sec:org434c3ef}
+\label{sec:purpose}
 
 En esta subsección se definirá el propósito del documento ERS y se
 especificará a quien va dirigido.
 
 
 \subsection{Ámbito del sistema}
-\label{sec:org12e44a1}
+\label{sec:scope}
 
 En esta subseccion:
 
@@ -94,28 +127,28 @@ requisitos globales del sistema, si existe)
 
 
 \subsection{Definiciones, Acrónimos y Abreviaturas}
-\label{sec:orgb158e36}
+\label{sec:glossary}
 
 En esta subsección se definirán todos los términos, acrónimos y
 abreviaturas utilizadas en la ERS.
 
 
 \subsection{Referencias}
-\label{sec:org62711e0}
+\label{sec:references}
 
 En esta subsección se mostrará una lista completa de todos los
 documentos referenciados en la ERS
 
 
 \subsection{Visión general del documento}
-\label{sec:orgdaca22c}
+\label{sec:overview}
 
 Esta subsección describe brevemente los contenidos y la organización
 del resto de la ERS.
 
 
 \section{Descripción general del documento}
-\label{sec:orgc1c4017}
+\label{sec:general_description}
 
 En esta sección se describen todos aquellos factores que afectan al
 producto y a sus requisitos. No se describen los requisitos, sino su
@@ -129,7 +162,7 @@ requisitos.
 
 
 \subsection{Perspectiva del producto}
-\label{sec:org24980a8}
+\label{sec:product_perspective}
 
 Esta subsección debe relacionar el futuro sistema (producto
 software) con otros productos. Si el producto es totalmente
@@ -141,7 +174,7 @@ recomienda utilizar diagramas de bloques.
 
 
 \subsection{Funciones del producto}
-\label{sec:orgaf51da6}
+\label{sec:product_functions}
 
 En esta subsección de la ERS se mostrará un resumen, a grandes
 rasgos, de las funciones del futuro sistema, por ejemplo, en una ERS
@@ -156,7 +189,7 @@ relaciones entre funciones y no el diseño del sistema.
 
 
 \subsection{Características de los usuarios}
-\label{sec:orga40b0ee}
+\label{sec:user_characteristics}
 
 Esta subsección describirá las características generales de los
 usuarios del producto, incluyendo nivel educacional, experiencia y
@@ -164,7 +197,7 @@ experiencia técnica.
 
 
 \subsection{Restricciones}
-\label{sec:org5ca5790}
+\label{sec:constraints}
 
 Esta subsección describirá aquellas limitaciones que se imponen
 sobre los desarrolladores del producto.
@@ -195,7 +228,7 @@ sobre los desarrolladores del producto.
 
 
 \subsection{Suposiciones y dependencias}
-\label{sec:org0ae23fe}
+\label{sec:assumptions_dependencies}
 
 Esta subsección de la ERS describirá aquellos factores que, si
 cambian, pueden afectar a los requisitos. Por ejemplo, los
@@ -208,14 +241,14 @@ requisitos.
 
 
 \subsection{Requisitos futuros}
-\label{sec:org33cfcdb}
+\label{sec:future_requirements}
 
 Esta subsección esbozará futuras mejoras al sistema, que podrán
 anlizarse e implementarse en el futuro.   
 
 
 \section{Requisitos específicos}
-\label{sec:org40573d1}
+\label{sec:specific_requirements}
 
 Esta sección contiene los requisitos a un nivel de detalle suficiente
 como para permitir a los diseñadores diseñar un sistema que
@@ -292,14 +325,14 @@ componentes del sistema son los que realizan el registro R.
 
 
 \subsection{Interfaces externas}
-\label{sec:orgfd5391f}
+\label{sec:external_interfaces}
 
 Se describirán los requisitos que afecten a la interfaz de usuario,
 interfaz con otros sistemas (hardware y software) e interfaces de comunicaciones.
 
 
 \subsection{Funciones}
-\label{sec:org307bb59}
+\label{sec:functions}
 
 Esta subsección (quizás la más larga del documento) deberá
 especificar todas aquellas acciones (funciones) que deberá llevar a
@@ -360,7 +393,7 @@ conveniente. Deberá, eso sí, justificarse el porqué de tal elección.
 
 
 \subsection{Requisitos de rendimiento}
-\label{sec:org94bc543}
+\label{sec:performance_requirements}
 
 Se detallarán los requisitos relacionados con la carga que se espera
 tenga que soportar el sistema. Por ejemplo, el número de terminales,
@@ -374,7 +407,7 @@ espera almacenar (decenas, cientos, miles o millones).
 
 
 \subsection{Restricciones de diseño}
-\label{sec:org49fe900}
+\label{sec:design_constraints}
 
 
 Todo aquello que restrinja las decisiones relativas al diseño de la
@@ -383,7 +416,7 @@ hardware, etc.
 
 
 \subsection{Atributos del sistema}
-\label{sec:orgd0babc0}
+\label{sec:system_attributes}
 
 Se detallarán los atributos de calidad (las "ilities") del
 sistema. Fiablidad, manteniblidad, portabilidad, y muy importante,
@@ -394,7 +427,7 @@ un \emph{login} y una \emph{password}).
 
 
 \subsection{Otros requisitos}
-\label{sec:org31d2978}
+\label{sec:other_requirements}
 
 Cualquier otro requisito que no encaje en otra sección.
 
@@ -402,7 +435,7 @@ Cualquier otro requisito que no encaje en otra sección.
 
 
 \section{Apéndices}
-\label{sec:org75cea03}
+\label{sec:appendix}
 
 Puede contener todo tipo de información relevante para la ERS pero
 que, propiamente, no forme parte de la ERS. Por ejemplo:
