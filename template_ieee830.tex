@@ -33,18 +33,20 @@
 \renewcommand{\headrulewidth}{1.0pt}
 \renewcommand{\contentsname}{Índice}
 \pagestyle{fancy}
-\hypersetup{
- colorlinks = true,
- linkcolor = {black},
- linkbordercolor = {white},
- urlcolor = {blue},
- pdfauthor={},
- pdftitle={ERS-IEEE-830},
- pdfkeywords={},
- pdfsubject={},
- pdfcreator={Emacs 26.2 (Org mode 9.1.9)}, 
- pdflang={Spanish}}
- 
+\hypersetup
+{
+	colorlinks = true,
+	linkcolor = {black},
+	linkbordercolor = {white},
+	urlcolor = {blue},
+	pdfauthor={},
+	pdftitle={ERS-IEEE-830},
+	pdfkeywords={},
+	pdfsubject={},
+	pdfcreator={Emacs 26.2 (Org mode 9.1.9)}, 
+	pdflang={Spanish}
+}
+
 %----------------------------- DOCUMENT -----------------------------%
 \begin{document}
 	\begin{titlepage}
@@ -63,11 +65,11 @@
 \newgeometry{left=2.00cm, right=2.50cm, top=2.50cm, bottom=2.00cm}
 
 \section*{Registro de cambios}
-\label{sec:registro}
+\label{sec:changelog}
 
 
 \begin{table}[ht]
-\label{tab:registro}
+\label{tab:changelog}
 	\centering
 	\begin{tabularx}{\linewidth}{@{}|c|X|c|c|@{}}
 	\hline
@@ -93,44 +95,59 @@
 \section{Introducción}
 \label{sec:introduction}
 
-En esta sección se proporcionará una introducción a todo el
-documento de Especificación de Requisitos Software(ERS). Consta de
-varias subsecciones: propósito, ámbito del sistema, definiciones,
-referencias y visión general del documento.
-
 
 \subsection{Propósito}
 \label{sec:purpose}
 
-En esta subsección se definirá el propósito del documento ERS y se
-especificará a quien va dirigido.
+Este documento define la especificación de requerimientos de software para el bootloader de un dispositivo médico de 
+electrocardiografía ambulatoria (Holter).
+
+Está dirigido a clientes y desarrolladores dedicados al análisis, diseño e implementación de sistemas críticos.
 
 
 \subsection{Ámbito del sistema}
 \label{sec:scope}
 
-En esta subseccion:
-
 \begin{itemize}
-\item Se podrá dar un nombre al futuro sistema (p.ej. MiSistema)
+	\item Será propiedad de ECCOSUR, empresa auspiaciante del proyecto.
 
-\item Se explicará lo que el sistema hará y lo que no hará.
+	\item Realizará sus funciones con la seguridad e integridad de un sistema crítico.
 
-\item Se describirán los beneficios, objetivos y metas que se espera
-alcanzar con el futuro sistema.
-
-\item Se referenciarán todos aquellos documentos de nivel superior (p.e en
-Industria de sistemas, que incluyen hardware y software, deberían
-mantenerse la consistencia con el documento de especificaciones de
-requisitos globales del sistema, si existe)
+	\item Se espera lograr una evolución considerable respecto del bootloader actual que posee el Holter de ECCOSUR.
+	
+	\item Se podrá integrar con otros sistemas embebidos que posean la misma arquitectura del Holter de ECCOSUR.
 \end{itemize}
 
 
 \subsection{Definiciones, Acrónimos y Abreviaturas}
 \label{sec:glossary}
 
-En esta subsección se definirán todos los términos, acrónimos y
-abreviaturas utilizadas en la ERS.
+\begin{table}[ht]
+\label{tab:glossary}
+	\centering
+	\begin{tabularx}{\linewidth}{@{}|>{\columncolor[gray]{0.8}}l|X|@{}}
+	\hline
+	AKA    			& \textbf{A}lso \textbf{K}nown \textbf{A}s																			\\ \hline
+	ARM     		& \textbf{A}dvanced \textbf{R}ISC \textbf{M}achine	     															\\ \hline	
+	Bootmanager     & Programa de arranque primario, también llamado bootloader primario												\\ \hline
+	Bootloader      & Programa de arranque secundario, también llamado bootloader secundario											\\ \hline
+	Branching     	& Técnica de salto de memoria para pasar de aplicación a bootloader y visceversa									\\ \hline
+	Checksum     	& Suma de verificación, i.e. función de redundancia para detectar cambios accidentales en una secuencia de datos 	\\ \hline
+	Holter     		& Electrocardiógrafo ambulatorio     																				\\ \hline
+	IEEE     		& \textbf{I}nstitute of \textbf{E}lectrical and \textbf{E}lectronics \textit{E}ngineers								\\ \hline
+	IDE     		& \textbf{I}ntegrated \textbf{D}evelopment \textbf{E}nvironment														\\ \hline
+	LWPAN     		& \textbf{L}ow \textbf{P}ower \textbf{W}ide \textit{A}rea \textit{N}etwork											\\ \hline
+	MCU     		& \textbf{M}icro-\textbf{C}ontroller \textbf{U}nit																	\\ \hline
+	NDA     		& \textbf{N}on-\textbf{D}isclosure \textbf{A}greement																\\ \hline
+	Parsing    		& Técnica de análisis de sintáxis de una secuencia con el objetivo de detectar patrones								\\ \hline
+	RISC			& \textbf{R}educed \textbf{I}nstruction \textbf{S}et \textbf{C}omputer												\\ \hline
+	Secureboot     	& Técnica que impide la ejecución de cualquier software no firmado o certificado									\\ \hline
+	Stack	     	& En protocolos de comunicación, la implementación en código del modelo OSI del protocolo							\\ \hline
+	Std.     		& Standard, i.e. estándar							     															\\ \hline
+	TI       		& \textbf{T}exas \textbf{I}nstruments				     															\\ \hline
+	USB     		& \textbf{U}niversal \textbf{S}erial \textbf{B}us, i.e. bus universal en serie										\\ \hline
+	\end{tabularx}
+\end{table}
 
 
 \subsection{Referencias}
@@ -143,87 +160,77 @@ documentos referenciados en la ERS
 \subsection{Visión general del documento}
 \label{sec:overview}
 
-Esta subsección describe brevemente los contenidos y la organización
-del resto de la ERS.
+Este documento se realiza siguiendo el estándar IEEE Std. 830-1998.
 
 
-\section{Descripción general del documento}
+\section{Descripción general}
 \label{sec:general_description}
-
-En esta sección se describen todos aquellos factores que afectan al
-producto y a sus requisitos. No se describen los requisitos, sino su
-contexto. Esto permitirá definir con detalle los requisitos en la
-sección 3, haciendo que sean más fáciles de entender.
-
-Normalmente, esta sección consta de las siguientes subsecciones:
-Perspectiva del producto, funciones del producto, características de
-los usuarios, restricciones, factores que se asumen y futuros
-requisitos.
 
 
 \subsection{Perspectiva del producto}
 \label{sec:product_perspective}
 
-Esta subsección debe relacionar el futuro sistema (producto
-software) con otros productos. Si el producto es totalmente
-independiente de otros productos, también debe especificarse
-aquí. Si la ERS define un producto que es parte de un sistema mayor,
-esta subsección relacionará los requisitos del sistema mayor con la
-funcionalidad del producto mayor y el producto aquí descripto. Se
-recomienda utilizar diagramas de bloques.
+\begin{itemize}
+	\item El bootloader es un componente de software que se almacena en la memoria de programa de manera independiente. De esta manera tiene un flujo 	de programa propio y puede gestionar el borrado y escritura de la memoria de programa de aplicación. Se integra de manera complementaria con la 		aplicación de software, y la provee de actualización, restauración y validación.
+	
+	\item Como todo bootloader, el producto tiene una fuerte dependencia con la arquitectura sobre la que está embarcado. 
+	No tiene relación con el código de firmware del Holter, ya que trata las imágenes de manera transparente. En otras palabras, el bootloader 
+	funcionará de la misma manera en cualquier sistema embebido que posea la arquitectura del Holter, siempre que haya sido correctamente integrado.
+	
+	\item El bootloader soportará la descarga de imágenes de firmware a través del protocolo USB. Por lo tanto, se corresponde unívocamente 
+	con el sistema "host" que soporta dicho protocolo.
+\end{itemize}
 
 
 \subsection{Funciones del producto}
 \label{sec:product_functions}
 
-En esta subsección de la ERS se mostrará un resumen, a grandes
-rasgos, de las funciones del futuro sistema, por ejemplo, en una ERS
-para un programa de contabilidad, esta subsección mostrará que el
-sistema soportará el mantenimiento de cuentas, mostrará el estado de
-las cuentas y facilitará la facturación, sin mencionar el enorme
-detalle que cada una de estas funciones requiere.
-
-Las funciones deberán mostrarse de forma organizada, y pueden
-utilizarse gráficos, siempre y cuando dichos gráficos reflejen las
-relaciones entre funciones y no el diseño del sistema.
+\begin{itemize}
+	\item Actualización del firmware actual a versiones nuevas certificadas (\textit{AKA Update}).
+	
+	\item Restauración del firmware actual a la última versión previa estable instalada (\textit{AKA Rollback}).
+	
+	\item Validación de origen e integridad del firmware a instalar (\textit AKA Secureboot).
+	
+	\item Soporte del formato de imágenes binarias \textbf{Motorola S-record} (\textit{AKA SREC Parsing}).
+\end{itemize}
 
 
 \subsection{Características de los usuarios}
 \label{sec:user_characteristics}
 
-Esta subsección describirá las características generales de los
-usuarios del producto, incluyendo nivel educacional, experiencia y
-experiencia técnica.
+Los usuarios finales de este producto son personas capacitadas en el ámbito de los sistemas embebidos.
+
+Para poder seguir correctamente los pasos de integración del bootloader el usuario debe poseer conocimientos avanzados de software embebido, lenguaje C y compilador \textit{ARM-CGT de Texas Instruments}.
 
 
 \subsection{Restricciones}
 \label{sec:constraints}
 
-Esta subsección describirá aquellas limitaciones que se imponen
-sobre los desarrolladores del producto.
-
 \begin{itemize}
-\item Políticas de la empresa.
+	\item El software del bootloader debe mantenerse bajo control de versiones GIT.
+	
+	\item La difusión del desarrollo está regulada por un documento NDA firmado por las partes interesadas.
 
-\item Limitaciones del hardware.
+	\item El alcance del bootloader está limitado a la arquitectura \textit{MSP430 de Texas Instruments} sobre la que será desarrollado, y sólo podrá 
+	ser integrado con sistemas embebidos que tengan dicha arquitectura.
 
-\item Interfaces con otras aplicaciones.
+	\item El protocolo de comunicación para el caso del Holter está limitado a USB ya que es el que está implementado en el hardware existente. Para 
+	futuras integraciones, el núcleo del bootloader puede complementarse con distintos \textit{stacks} de comunicación.
 
-\item Operaciones paralelas.
+	\item El hardware existente no dispone de memoria flash externa, por lo que tanto el bootloader, la aplicación y las imágenes de actualización y 
+	restauración deben ser gestionadas en la misma memoria flash interna del microcontrolador.
 
-\item Funciones de auditoría
+	\item El tamaño de programa debe ser el menor posible para brindar mayor espacio a la aplicación, por lo que código del software está 
+	restringido a lenguaje C.
+	
+	\item El éstandar de C a utilizar debe ser CXX (TBD).
 
-\item Funciones de control.
+	\item Se deben tener conocimientos del compilador TI ARM-CGT, en particular de Linker Scripts.
+	
+	\item La versión del compilador TI ARM-CGT a utilizar debe ser 20.2.2.LTS para compatabilidad con desarrollos existentes.
 
-\item Lenguaje(s) de programación
-
-\item Protocolos de comunicación.
-
-\item Requisitos de habilidad.
-
-\item Criticalidad de la aplicación.
-
-\item Consideraciones acerca de la seguridad.
+	\item Toda documentación relativa al código debe ser generada a través de la herramienta Doxygen.
 \end{itemize}
 
 
@@ -237,14 +244,39 @@ unidades de la empresa, o pueden presuponer que  el sistema correrá
 sobre cierto sistema operativo. Si cambian dichos detalles en la
 organización de la empresa, o si cambian ciertos detalles técnicos,
 como el sistema operativo, puede ser necesario revisar y cambiar los
-requisitos. 
+requisitos.
+
+\begin{itemize}
+	\item Se asume el acceso total al código fuente de la aplicación y bootloader actual del dispositivo Holter.
+	
+	\item Se asume la independencia en el uso de un IDE particular para el desarrollo.
+
+	\item Se asume que el dispositivo Holter esta diseñado sobre la arquitectura MSP430 de Texas Instruments.
+
+	\item Se asume la posibilidad de reutilizar código propiedad de ECCOSUR para el desarrollo del software.
+
+	\item Se asume que la memoria flash interna del microcontrolador TI MSP430FR5994 de 2 MB es suficiente para alojar simultáneamente aplicación, bootloader e imagen de restauración.
+
+	\item De ser posible alojar una imagen de restauración, se asume la dependencia del método swap A/B para la carga de la imagen.
+\end{itemize}
 
 
 \subsection{Requisitos futuros}
 \label{sec:future_requirements}
 
-Esta subsección esbozará futuras mejoras al sistema, que podrán
-anlizarse e implementarse en el futuro.   
+\begin{itemize}
+	\item Actualización por método FUOTA (depende de una actualización de hardware que incluya un módem LPWAN).
+	
+	\item Desarrollo de \textit{bootloader updater}, programa que actualiza al bootloader.
+
+	\item Se asume que el dispositivo Holter esta diseñado sobre la arquitectura MSP430 de Texas Instruments.
+
+	\item Se asume la posibilidad de reutilizar código propiedad de ECCOSUR para el desarrollo del software.
+
+	\item Se asume que la memoria flash interna del microcontrolador TI MSP430FR5994 de 2MB es suficiente para alojar simultáneamente aplicación, bootloader e imagen de restauración.
+
+	\item De ser posible alojar una imagen de restauración, se asume la dependencia del método \textit{swap A/B} para la carga de la imagen.
+\end{itemize}
 
 
 \section{Requisitos específicos}

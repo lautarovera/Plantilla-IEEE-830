@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.22)  7 NOV 2021 14:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.22)  7 NOV 2021 19:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -387,7 +387,7 @@ Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 \TX@cols=\count276
 \TX@ftn=\toks29
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 46.
+Package hyperref Info: Option `colorlinks' set `true' on input line 48.
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
@@ -397,22 +397,22 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 (./template_ieee830.aux)
 \openout1 = `template_ieee830.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -437,7 +437,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box60
-Package hyperref Info: Link coloring ON on input line 49.
+Package hyperref Info: Link coloring ON on input line 51.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -450,9 +450,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count284
 )
-LaTeX Info: Redefining \ref on input line 49.
-LaTeX Info: Redefining \pageref on input line 49.
-LaTeX Info: Redefining \nameref on input line 49.
+LaTeX Info: Redefining \ref on input line 51.
+LaTeX Info: Redefining \pageref on input line 51.
+LaTeX Info: Redefining \nameref on input line 51.
 
 (./template_ieee830.out) (./template_ieee830.out)
 \@outlinefile=\write3
@@ -535,33 +535,647 @@ LaTeX Info: Redefining \nameref on input line 49.
 plicate ignored
 <to be read again> 
                    \relax 
-l.88 
+l.90 
       [1
 
 ] (./template_ieee830.toc)
 \tf@toc=\write4
 \openout4 = `template_ieee830.toc'.
 
- [2] [3] [4] [5] [6] [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 450.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 450.
+ [2]
+! Extra alignment tab has been changed to \cr.
+<template> ...egin \relax \d@llarend \endtemplate 
+                                                  
+l.147 	\end{tabularx}
+                     
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-(./template_ieee830.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 450.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 450.
+! Extra alignment tab has been changed to \cr.
+<template> ...egin \relax \d@llarend \endtemplate 
+                                                  
+l.147 	\end{tabularx}
+                     
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+[]|\T1/cmr/bx/n/12 A\T1/cmr/m/n/12 lso
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 K\T1/cmr/m/n/12 nown
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 "tam-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 bién
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 cono-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 cido
+ []
+
+
+Overfull \hbox (9.44075pt too wide) in paragraph at lines 147--147
+[]|\T1/cmr/bx/n/12 A\T1/cmr/m/n/12 dvanced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 R\T1/cmr/m/n/12 ISC
+ []
+
+
+Overfull \hbox (2.91457pt too wide) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 M\T1/cmr/m/n/12 achine| 
+ []
+
+
+Overfull \hbox (8.22025pt too wide) in paragraph at lines 147--147
+[]|\T1/cmr/m/n/12 Programa
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 de ar-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 ranque
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 pri-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 mario,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 tam-bién
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 lla-mado
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 boot-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 loader
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 pri-
+ []
+
+
+Overfull \hbox (8.22025pt too wide) in paragraph at lines 147--147
+[]|\T1/cmr/m/n/12 Programa
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 de ar-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 ranque
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 se-cun-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 dario,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 tam-bién
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 lla-mado
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 boot-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 loader
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 se-cun-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+[]|\T1/cmr/m/n/12 Técnica
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 memo-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 pasar
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 cación
+ []
+
+
+Underfull \hbox (badness 1655) in paragraph at lines 147--147
+\T1/cmr/m/n/12 a boot-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 vis-cev-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+[]|\T1/cmr/m/n/12 Suma
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 fi-cación,
+ []
+
+
+Underfull \hbox (badness 2393) in paragraph at lines 147--147
+\T1/cmr/m/n/12 ción de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 re-dun-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 dan-cia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 para
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 de-tec-tar
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 cam-bios
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 ac-ci-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 den-tales
+ []
+
+
+Underfull \hbox (badness 5847) in paragraph at lines 147--147
+\T1/cmr/m/n/12 en una
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 se-cuen-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 cia de
+ []
+
+
+Overfull \hbox (51.94562pt too wide) in paragraph at lines 147--147
+[]|\T1/cmr/m/n/12 Electrocardiógrafo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 am-bu-la-
+ []
+
+
+Overfull \hbox (2.70908pt too wide) in paragraph at lines 147--147
+[]|\T1/cmr/bx/n/12 I\T1/cmr/m/n/12 nstitute
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 of
+ []
+
+
+Overfull \hbox (7.12878pt too wide) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 E\T1/cmr/m/n/12 lectrical
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 and
+ []
+
+
+Overfull \hbox (15.02547pt too wide) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 E\T1/cmr/m/n/12 lectronics
+ []
+
+
+Overfull \hbox (9.06032pt too wide) in paragraph at lines 147--147
+\T1/cmr/m/it/12 E\T1/cmr/m/n/12 ngineers| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+[]|\T1/cmr/bx/n/12 M\T1/cmr/m/n/12 icro-
+ []
+
+
+Overfull \hbox (10.95428pt too wide) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 C\T1/cmr/m/n/12 ontroller
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 U\T1/cmr/m/n/12 nit,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 cro-con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+[]|\T1/cmr/bx/n/12 N\T1/cmr/m/n/12 on-
+ []
+
+
+Overfull \hbox (11.35551pt too wide) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 D\T1/cmr/m/n/12 isclosure
+ []
+
+
+Overfull \hbox (17.92485pt too wide) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 A\T1/cmr/m/n/12 greement,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 i.e.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 acuerdo
+ []
+
+
+Underfull \hbox (badness 1655) in paragraph at lines 147--147
+\T1/cmr/m/n/12 de con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 fi-den-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+[]|\T1/cmr/m/n/12 Técnica
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 análi-sis
+ []
+
+
+Underfull \hbox (badness 7308) in paragraph at lines 147--147
+\T1/cmr/m/n/12 de sin-
+ []
+
+
+Underfull \hbox (badness 2310) in paragraph at lines 147--147
+\T1/cmr/m/n/12 una se-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 cuen-cia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 con el
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 ob-je-tivo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 de de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 tec-tar
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 pa-
+ []
+
+
+Overfull \hbox (3.11595pt too wide) in paragraph at lines 147--147
+[]|\T1/cmr/bx/n/12 R\T1/cmr/m/n/12 educed
+ []
+
+
+Overfull \hbox (15.1088pt too wide) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 I\T1/cmr/m/n/12 nstruction
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 S\T1/cmr/m/n/12 et
+ []
+
+
+Overfull \hbox (13.89108pt too wide) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 C\T1/cmr/m/n/12 omputer,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 i.e.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 puta-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 dora
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 con
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 junto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 ducido
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 in-struc-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 ciones
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 Se-cure-
+ []
+
+! Extra alignment tab has been changed to \cr.
+<template> ...egin \relax \d@llarend \endtemplate 
+                                                  
+l.147 	\end{tabularx}
+                     
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+[]|\T1/cmr/m/n/12 En
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 pro-to-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 co-mu-ni-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 cación,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 im-ple-
+ []
+
+
+Overfull \hbox (10.34332pt too wide) in paragraph at lines 147--147
+\T1/cmr/m/n/12 mentación
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 código
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 del
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 mod-elo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 pro-to-
+ []
+
+
+Overfull \hbox (8.05916pt too wide) in paragraph at lines 147--147
+[]|\T1/cmr/m/n/12 Standard,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+[]|\T1/cmr/bx/n/12 T\T1/cmr/m/n/12 exas
+ []
+
+
+Overfull \hbox (20.06873pt too wide) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 I\T1/cmr/m/n/12 nstruments| 
+ []
+
+
+Overfull \hbox (7.40234pt too wide) in paragraph at lines 147--147
+[]|\T1/cmr/bx/n/12 U\T1/cmr/m/n/12 niversal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 S\T1/cmr/m/n/12 erial
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/bx/n/12 B\T1/cmr/m/n/12 us,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 uni-ver-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\T1/cmr/m/n/12 sal en
+ []
+
+
+LaTeX Warning: Float too large for page by 1363.29018pt on input line 148.
+
+[3] [4] [5] [6] [7] [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 475.
+ [9] [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 475.
+ (./template_ieee830.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 475.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 475.
 Package rerunfilecheck Info: File `template_ieee830.out' has not changed.
-(rerunfilecheck)             Checksum: C2C91A4024B929934138F30844D80E78;1443.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 450.
+(rerunfilecheck)             Checksum: 235443D852B4C4BF45C0F1988E832090;1429.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 475.
  ) 
 Here is how much of TeX's memory you used:
- 8134 strings out of 483007
- 115324 string characters out of 5961756
- 385676 words of memory out of 5000000
- 22962 multiletter control sequences out of 15000+600000
+ 8137 strings out of 483007
+ 115353 string characters out of 5961756
+ 395731 words of memory out of 5000000
+ 22963 multiletter control sequences out of 15000+600000
  545542 words of font info for 55 fonts, out of 8000000 for 9000
  107 hyphenation exceptions out of 8191
- 34i,11n,45p,266b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,11n,45p,417b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/lautaro/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.6
 00pk> </home/lautaro/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx144
 0.600pk> </home/lautaro/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
@@ -573,10 +1187,10 @@ ppen/ec/ecrm1728.600pk> </home/lautaro/.texlive2019/texmf-var/fonts/pk/ljfour/j
 knappen/ec/eccc1728.600pk> </home/lautaro/.texlive2019/texmf-var/fonts/pk/ljfou
 r/jknappen/ec/ecbx2074.600pk> </home/lautaro/.texlive2019/texmf-var/fonts/pk/lj
 four/jknappen/ec/eccc2488.600pk>
-Output written on template_ieee830.pdf (9 pages, 113632 bytes).
+Output written on template_ieee830.pdf (11 pages, 125009 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
+ 523 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 37 named destinations out of 1000 (max. 500000)
  169 words of extra memory for PDF output out of 10000 (max. 10000000)
 
