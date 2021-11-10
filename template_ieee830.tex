@@ -139,7 +139,11 @@ Está dirigido a clientes y desarrolladores dedicados al análisis, diseño e im
 	LWPAN     		& \textbf{L}ow \textbf{P}ower \textbf{W}ide \textit{A}rea \textit{N}etwork											\\ \hline
 	MCU     		& \textbf{M}icro-\textbf{C}ontroller \textbf{U}nit																	\\ \hline
 	NDA     		& \textbf{N}on-\textbf{D}isclosure \textbf{A}greement																\\ \hline
+	NIR     		& \textbf{N}on-\textbf{I}nitialized \textbf{R}AM	
+								\\ \hline
 	Parsing    		& Técnica de análisis de sintáxis de una secuencia con el objetivo de detectar patrones								\\ \hline
+	POR     		& \textbf{P}ower \textbf{O}n \textbf{R}eset	
+								\\ \hline
 	RISC			& \textbf{R}educed \textbf{I}nstruction \textbf{S}et \textbf{C}omputer												\\ \hline
 	Secureboot     	& Técnica que impide la ejecución de cualquier software no firmado o certificado									\\ \hline
 	Stack	     	& En protocolos de comunicación, la implementación en código del modelo OSI del protocolo							\\ \hline
@@ -187,11 +191,8 @@ Este documento se realiza siguiendo el estándar IEEE Std. 830-1998.
 
 \begin{itemize}
 	\item Actualización del firmware actual a versiones nuevas certificadas (\textit{AKA Update}).
-	
 	\item Restauración del firmware actual a la última versión previa estable instalada (\textit{AKA Rollback}).
-	
 	\item Validación de origen e integridad del firmware a instalar (\textit AKA Secureboot).
-	
 	\item Soporte del formato de imágenes binarias \textbf{Motorola S-record} (\textit{AKA SREC Parsing}).
 \end{itemize}
 
@@ -282,146 +283,96 @@ requisitos.
 \section{Requisitos específicos}
 \label{sec:specific_requirements}
 
-Esta sección contiene los requisitos a un nivel de detalle suficiente
-como para permitir a los diseñadores diseñar un sistema que
-satisfaga estos requisitos, y demuestren si el sistema satisface, o
-no, los requisitos. Todo requisito aquí especificado describirá
-comportamientos externos del sistema, perceptibles por parte de los
-usuarios, operadores y otros sistemas. Esta es la sección más larga
-e importante de la ERS. Deberán aplicarse los siguientes principios:
-
-\begin{itemize}
-\item El documento debería ser perfectamente legible por personas de muy
-distintas formaciones e intereses.
-
-\item Deberán referenciarse aquellos documentos relevantes que poseen
-alguna influencia sobre los requisitos.
-
-\item Todo requisito deberá ser unívocamente identificable mediante algún
-código o sistema de numeración adecuado.
-
-\item Lo ideal, aunque en la práctica no siempre realizable, es que los
-requisitos posean las siguientes características: 
-
-\begin{itemize}
-\item \textbf{Corrección:} La ERS es correcta si y sólo si todo requisito que
-figura aquí(y que será implementado en el sistema) refleja alguna
-necesidad real. La corrección de la ERS implica que el sistema
-implementado será el deseado.
-
-\item \textbf{No ambiguos:} Cada requisito tiene una sola interpretación. Para
-eliminar la ambigüedad inherente a los requisitos expresados en
-lenguaje natural, se deberán utilizar gráficos o notaciones
-formales. En el caso de utilizar términos que, habitualmente,
-poseen más de una interpretación, se definirán con precisión en
-glosario.
-
-\item \textbf{Completos:} Todos los requisitos relevantes han sido incluidos en
-la ERS. Conviene incluir todas las posibles respuestas del sistema
-a los datos de entrada, tanto validos como no válidos.
-
-\item \textbf{Consistentes:} Los requisitos no pueden ser contradictorios. Un
-conjunto de requisitos contradictorios no es implementable.
-
-\item \textbf{Clasificados:} Normalmente, no todos los requisitos son igual de
-importantes. Los requisitos pueden clasificarse por importancia
-(esenciales, condicionales u opcionales) o por estabilidad (cambios
-que se espera que afecten al requisito). Esto sirve, ante todo,
-para no emplear excesivos recursos en implementar requisitos no
-esenciales.
-
-\item \textbf{Verificables:} La ERS es verificalble si y sólo si todos sus
-requisitos son verificables. Un requisito es verificable
-(testeable) si existe un proceso finito y no costoso para
-demostrar que el sistema cumple con el requisito. Un requisito
-ambiguo no es, en general, verificable. Expresiones como a veces,
-bien, adecuado, etc introducen ambigüedad en los
-requisitos. Requisitos como "en caso de accidente la nube tóxica
-no se extenderá más allá de 25km" no es verificable por el alto
-costo que conlleva.
-
-\item \textbf{Modificables:} La ERS es modificable si y sólo si se encuentra
-estructurada de forma que los cambios a los requisitos puedan
-realizarse de forma fácil, completa y consistente. La utilización
-de herramientas automáticas de gestión de requisito (por ejemplo
-RequisitePro o Doors) facilitan enormemente esta tarea.
-
-\item \textbf{Trazables:} La ERS es trazable si se conoce el origen de cada
-requisito y facilita la referencia de cada requisito a los
-componentes y de la implementación. La trazabilidad hacia atrás
-indica el origen (documento, persona, etc) de cada requisito. La
-trazabilidad hacia delante de un requisito R indica qué
-componentes del sistema son los que realizan el registro R.
-\end{itemize}
-\end{itemize}
+\begin{enumerate}
+	\item Requerimientos funcionales
+		\begin{enumerate}
+			\item El proyecto será desarrollado y mantenido mediante control de versiones \textit{GIT}.
+			\item El proyecto será desarrollado en lenguaje C, compilado con \textit{TI ARM-CGT 20.2.2.LTS} siguiendo la guía de estilos y analizado 
+			estáticamente con la herramienta \textit{Splint}.
+			\item El \textit{bootmanager} implementará \textit{branching} de manera segura.
+			\item El \textit{bootmanager} implementará \textit{secureboot} para chequeos de origen de firmware antes de un salto a aplicación. 
+			\item El \textit{bootloader} actualizará correctamente la versión de firmware actual por una nueva versión certificada 	
+			(\textit{Update}).
+			\item El \textit{bootloader} restaurará el sistema a la última versión estable instalada en caso de cualquier defecto en la 
+			instalación o en el funcionamiento de nuevas versiones \textit{Rollback}.
+			\item El \textit{bootloader} soportará comunicación USB para descargar imágenes de firmware.
+			\item El \textit{bootloader} soportará el formato de imagen binaria \textit{Motorola SREC}.
+			\item El \textit{bootloader} implementará funciones de redundancia cíclica, \textit{CRC} y \textit{checksum} tanto durante la descarga 
+			USB como la instalación.
+		\end{enumerate}
+	\item Requerimientos de documentación
+		\begin{enumerate}
+			\item El código será documentado con la herramienta \textit{Doxygen}.
+			\item El ciclo de vida del presente proyecto será respaldado por una memoria técnica.
+			\item La integración del bootloader en otras aplicaciones y casos de uso será facilitada mediante un manual de integración.
+		\end{enumerate}
+	\item Requerimiento de testing
+		\begin{enumerate}
+			\item Se desarrollará un script en lenguaje \textit{Python} que cumpla con la funcionalidad mínima de \textit{host} para la descarga USB 
+			de la imagen.
+			\item Se validará el correcto funcionamiento del bootloader multi-etapa utilizando el script de \textit{Python} como \textit{host}.
+		\end{enumerate}
+	\item Requerimientos opcionales
+		\begin{enumerate}
+			\item En caso de que se desee un \textit{bootmanager} y \textit{bootloader}, serán dejados fuera de la sección protegida de la memoria.
+		\end{enumerate}
+\end{enumerate}
 
 
 \subsection{Interfaces externas}
 \label{sec:external_interfaces}
 
-Se describirán los requisitos que afecten a la interfaz de usuario,
-interfaz con otros sistemas (hardware y software) e interfaces de comunicaciones.
+\begin{itemize}
+	\item El bootloader soportará comunicación USB [BTL-REQ-001].
+	
+	\item El bootloader descargará la imagen binaria a través de una aplicación ``Host'' unívoca [BTL-REQ-002].
+	
+	\item El bootloader soportorá el formato de imagen binaria \textit{Motorola SREC} [BTL-REQ-003].
+\begin{itemize}
 
 
 \subsection{Funciones}
 \label{sec:functions}
 
-Esta subsección (quizás la más larga del documento) deberá
-especificar todas aquellas acciones (funciones) que deberá llevar a
-cabo el software. Normalmente (aunque no siempre) son aquellas
-acciones expresables como "el sistema deberá \ldots{}" Si se considera
-necesario, podrán utilizarse notaciones gráficas y tablas, pero
-siempre supeditadas al lenguaje natural, y no al revés.
-
-Es importante tener en cuenta que, en 1983, el estándar de IEEE 830
-establecía que las funciones deberían expresarse como una jerarquía
-funcional (en paralelo con los DFDs propuestas por el análisis
-estructurado). Pero el estándar de IEEE 830, en sus últimas
-versiones, ya permite organizar esta subsección de múltiples formas,
-y sugiere, entre otras, las siguientes:
-
-
-\begin{itemize}
-\item Por tipos de usuarios: 
-    Distintos usuarios poseen distintos requisitos. Para cada clase de
-usuario que exista en la organización, se especificarán los
-requisitos funcionales que le afecten o tengan mayor relación con
-sus tareas.
-\end{itemize}
-
-
-\begin{itemize}
-\item Por objetos:
-   Los objetos son identidades del mundo real que serán reflejadas en
-el sistema. Para cada objeto, se detallarán sus atributos y sus
-funciones. Los objetos pueden agruparse en clases. Esta organización
-de la ERS no quiere decir que el diseño del sistema siga el
-paradigma de Orientación a Objetos.
-\end{itemize}
-
-
-\begin{itemize}
-\item Por estímulos: 
-  Se especificarán los posibles estímulos que recibe el sistema y las
-funciones relacionadas con dicho estímulo.
-\end{itemize}
-
-
-\begin{itemize}
-\item Por jerarquía funcional: 
-   Si ninguna de las anteriores alternativas resulta de ayuda, la
-funcionalidad del sistema se especificará como una jerarquía de
-funciones que comparten entradas, salidas o datos internos. Se
-detallarán las funciones (entrada, proceso, salida) y las
-subfunciones del sistema. Esto no implica que el diseño del sistema
-deba realizarse según el paradigma de diseño estructurado.
-\end{itemize}
-
-
-Para organizar esta subsección de la ERS se elegirá alguna de las
-anteriores alternativas, o incluso alguna otra que se considere más
-conveniente. Deberá, eso sí, justificarse el porqué de tal elección.
-
+\begin{enumerate}
+	\item Descarga:
+		\begin{enumerate}
+			\item La aplicación ``Host'' deberá enviar la imagen en paquetes y realizar control de flujo con el bootloader multi-etapa [BTL-REQ-004].
+			
+			\item El tamaño de los paquetes de datos (sin metadatos) deberá ser configurable por el bootloader multi-etapa, tomando valores de 256 B, 512 B y 1024 B [BTL-REQ-005].
+			
+			\item Cada paquete deberá ser verificado mediante redundancia cíclica CRC [BTL-REQ-006].
+			
+			\item Finalizada la transferencia, ésta deberá ser verificada mediante \textit{Checksum} [BTL-REQ-007].
+		\end{enumerate}
+		
+	\item Actualización y Restauración:
+		\begin{itemize}
+			\item El bootloader multi-etapa deberá actualizar el firmware actual por la nueva versión introducida por USB sin fallos [BTL-REQ-008].
+			
+			\item El bootloader multi-etapa deberá restaurar el sistema a la versión anterior estable en caso de fallos en la instalación o defectos en la aplicación [BTL-REQ-009].
+			
+			\item El método de instalación de la imagen será \textit{swap A/B} [BTL-REQ-010].
+		\end{itemize}
+		
+	\item Integridad:
+		\begin{itemize}
+			\item La etapa secundaria (\textit{Bootloader} propiamente dicho) actuará como la aplicación en caso de falla, para que el fallo sea seguro. Se considera que existe una falla si la aplicación sufre más de 10 resets en menos de 5 segundos [BTL-REQ-0011].
+			
+			\item La etapa primaria (\textit{Bootmanager}) deberá detectar fallas contando estos resets almacenándolos en NIR [BTL-REQ-012].
+			
+			\item En caso de POR, los valores en NIR deberán ser inicializados [BTL-REQ-013].
+		\end{itemize}
+		
+	\item Seguridad:
+		\begin{itemize}
+			\item La etapa primaria (\textit{Bootmanager}) deberá implementar \textit{Branching} [BTL-REQ-014].
+		
+			\item La etapa primaria (\textit{Bootmanager}) deberá implementar \textit{Secureboot} [BTL-REQ-015].
+			
+			\item En caso de que la aplicación no sea válida, el \textit{Bootmanager} saltará a \textit{Bootloader} verificando antes la integridad de este último [BTL-REQ-016].
+		\end{itemize}
+\begin{enumerate}
 
 
 \subsection{Requisitos de rendimiento}
